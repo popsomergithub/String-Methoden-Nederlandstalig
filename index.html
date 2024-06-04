@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<!-- https://www.w3schools.com/js/js_string_methods.asp -->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"><link rel="stylesheet" href="./styles.css">
+  <title>Basis String Methoden</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Basis&nbsp;&nbsp;String&nbsp;&nbsp;Methoden<br><br>('String' betekent een tekenreeks)</h1><br>
+    <h2 class="keuze-titel">Maak uw keuze:</h2><br>
+    <div class="keuzes-container">
+      <p><a href="#string-length">String length</a></p><p><a href="#string-char-at">String charAt()</a></p>
+      <p><a href="#string-char-code-at">String charCodeAt()</a></p><p><a href="#string-at">String at()</a></p>
+      <p><a href="#string-array">String [ ]</a></p><p><a href="#string-slice">String slice()</a></p>
+      <p><a href="#string-substring">String substring()</a></p><p><a href="#string-substr">String substr()</a></p>
+      <p><a href="#string-toUpperCase">String toUpperCase()</a></p><p><a href="#string-toLowerCase">String toLowerCase()</a></p>
+      <p><a href="#string-concat">String concat()</a></p><p><a href="#string-trim">String trim()</a></p>
+      <p><a href="#string-trimstart">String trimStart()</a></p><p><a href="#string-trimend">String trimEnd()</a></p>
+      <p><a href="#string-padstart">String padStart()</a></p><p><a href="#string-padend">String padEnd()</a></p>
+      <p><a href="#string-repeat">String repeat()</a></p><p><a href="#string-replace">String replace()</a></p>
+      <p><a href="#string-replace-all">String replaceAll()</a></p><p><a href="#string-split">String split()</a></p>
+    </div><br><br><br>
+
+    <div class="opmerking">
+      In het vervolg zul je dikwijls het woordje index zien. Hou er rekening mee dat de index in een string of array, altijd start vanaf het cijfer 0. Dus het eerste karakter in een string staat op index(0).<br><br>
+    </div>
+
+    <h2 class="keuze-titel ora">Bekijk ook eens deze andere methoden die ik nog zal beschrijven. (Voorlopig nog in ontwikkeling)</h2><br>
+    <div class="keuzes-container"><p>String Templates</p><p>String Search Methods</p></div><br><br>
+
+<!-- String length -->
+
+    <div id="string-length">
+      <h2 class="keuze-string">'String length'</h2><br>
+      <p>De lengte van een string wordt bepaald door het aantal UTF-16-code-eenheden te tellen die deze bevat. <br><br>Dit betekent dat de eigenschap length u vertelt uit hoeveel 16-bits eenheden de tekenreeks bestaat, en niet noodzakelijkerwijs uit het aantal tekens dat erin wordt weergegeven.<br><br>Bij normale karakters is het geen probleem (die zijn allemaal 1 karakter lang), maar bij emojis kan dat variëren van 1 to 3 karakters lang. (Je moet dat dus incalculeren)</p><br><br>
+      <div class="grid1">
+        <div class="voorbeelden">Enkele voorbeelden</div>
+        <div class="resultaten">Resultaten</div>
+        <div class="vb">"abcdefghijklmnopqrstuvwxyz".length</div><div class="res">26</div>
+        <div class="vb">"".length</div><div class="res">0</div>
+        <div class="vb">"*****1*****2".length</div><div class="res">12</div>
+        <div class="vb">"-+!,;:=@&é'".length</div><div class="res">11</div>
+        <div class="vb">"John Doe".length</div><div class="res">8</div>
+        <div class="wrap">
+          <div class="uw-input">
+            <div class="vb"><input type="text" id="grid1_input_1" placeholder="uw tekst"></div>
+            <div><button class="klik" onclick="string_Length()">Klik hier</button></div>
+          </div>
+        </div>
+        <div class="grid1_res" id="grid1_res"></div>
+      </div>
+    </div>
+
+<!-- String charAt() -->
+
+<div id="string-char-at">
+      <h2 class="keuze-string">'String charAt()'</h2><br>
+      <p>
+        Met de `charAt()`-methode kun je een specifiek teken uit een string halen door de positie (index) van het karakter binnen de string op te geven.<br><br>
+        Werkt alleen op strings: het is specifiek ontworpen voor stringobjecten. (in tegenstelling tot de At() methode)<br><br>
+        Accepteert alleen positieve indices: u kunt geen negatieve indices gebruiken om toegang te krijgen tot tekens vanaf het einde van de tekenreeks.<br><br>
+        Er wordt een fout gegenereerd voor ongeldige indices: als u probeert toegang te krijgen tot een index die groter is dan de lengte van de tekenreeks, wordt er een IndexError gegenereerd.
+      </p><br>
+      <div class="grid2">
+        <div class="voorbeelden">Enkele voorbeelden</div>
+        <div class="resultaten">Resultaten</div>
+        <div class="vb">"Abra CaDaBra".charAt(6)</div><div class="res">a</div>
+        <div class="vb">"Abra CaDaBra".charAt(0)</div><div class="res">A</div>
+        <div class="vb">"Abra CaDaBra".charAt(7)</div><div class="res">D</div>
+        <div class="vb">"Abra CaDaBra".charAt(11)</div><div class="res">a</div>
+        <div class="vb">"Abra CaDaBra".charAt(9)</div><div class="res">B</div>
+        <div class="wrap">
+          <div class="uw-input">
+            <div class="vb"><input type="text" id="grid2_input_1" placeholder="uw tekst"></div>
+            <div class="vb"><input type="text" id="grid2_input_2" placeholder="uw index"></div>
+            <div><button class="klik" onclick="string_charAt()">Klik hier</button></div>
+          </div>
+        </div>
+        <div class="grid2_res" id="grid2_res"></div>
+      </div>
+    </div>
+
+<!-- String charCodeAt() -->
+
+<div id="string-char-code-at">
+      <h2 class="keuze-string">'String char-code-at()'</h2><br>
+      <p>
+        Met de methode charCodeAt() kunt u de numerieke code vinden die een specifiek teken in een tekenreeks vertegenwoordigt.<br><br>Je geeft de positie (index) in de string, en het geeft je een getal tussen 0 en 65535, wat de code van het karakter is volgens de UTF-16-standaard.
+      </p><br>
+      <div class="grid3">
+        <div class="voorbeelden">Enkele voorbeelden</div>
+        <div class="resultaten">Resultaten</div>
+        <div class="vb">"Hallo Iedereen".charCodeAt(6)</div><div class="res">73 (I)</div>
+        <div class="vb">"Hallo Iedereen".charCodeAt(0)</div><div class="res">72 (H)</div>
+        <div class="vb">"Hallo Iedereen".charCodeAt(7)</div><div class="res">101 (e)</div>
+        <div class="vb">"Hallo Iedereen".charCodeAt(13)</div><div class="res">110 (n)</div>
+        <div class="vb">"Hallo Iedereen".charCodeAt(8)</div><div class="res">100 (d)</div>
+        <div class="wrap">
+          <div class="uw-input">
+            <div class="vb"><input type="text" id="grid3_input_1" placeholder="uw tekst"></div>
+            <div class="vb"><input type="text" id="grid3_input_2" placeholder="uw index"></div>
+            <div><button class="klik" onclick="string_charCodeAt()">Klik hier</button></div>
+          </div>
+        </div>
+        <div class="grid3_res" id="grid3_res"></div>
+      </div>
+    </div>
+
+<!-- String at() -->
+
+<div id="string-at">
+      <h2 class="keuze-string">'String at()'</h2><br>
+      <p>
+        De at()-methode is een geheel nieuwe functie in JavaScript. Het is een handige manier om tekens  uit een string te halen.<br><br>Wat deze methode anders maakt dan de oudere charAt()-methode, is dat je met at() negatieve getallen kunt gebruiken om tekens vanaf het einde van de tekenreeks te tellen.<br><br>
+        Stel dat u bijvoorbeeld een tekenreeks hebt met de naam myString. Als je vroeger het op een na laatste teken wilde krijgen met charAt(), moest je wat rekenwerk doen: charAt(myString.length - 2).<br><br>Met at() kun je nu gewoon myString.at(-2) schrijven en hetzelfde resultaat krijgen, wat veel eenvoudiger is!        
+      </p><br>
+      <div class="grid4">
+        <div class="voorbeelden">Enkele voorbeelden</div>
+        <div class="resultaten">Resultaten</div>
+        <div class="vb">"Dit is een test".charAt(-2)</div><div class="res">lege string</div>
+        <div class="vb">"Dit is een test".at(-2)</div><div class="res">s</div>
+        <div class="vb">"Dit is een test".at(7)</div><div class="res">E</div>
+        <div class="wrap">
+          <div class="uw-input">
+            <div class="vb">
+              <input type="text" id="grid4_input_1" placeholder="uw tekst">
+            </div>
+            <div class="vb">
+              <input type="text" id="grid4_input_2" placeholder="uw index">
+            </div>
+            <div><button class="klik" onclick="string_at()">Klik hier</button></div>
+          </div>
+        </div>
+        <div class="grid4_res" id="grid4_res"></div>
+      </div>
+    </div>
+
+<!-- String [] -->
+
+<div id="string-array">
+      <h2 class="keuze-string">'String []'</h2><br>
+      <p>
+        Het gebruik van vierkante haken om toegang te krijgen tot tekens in een tekenreeks kan een beetje verwarrend zijn:<br><br>
+        Het lijkt erop dat je met een array te maken hebt, maar strings zijn eigenlijk anders.<br><br>
+        Als je toegang probeert te krijgen tot een teken dat niet bestaat, krijg je door vierkante haakjes te gebruiken een waarde van 'ongedefinieerd' terug, terwijl de methode charAt() je een lege string geeft.<br><br>
+        U kunt de tekens in een tekenreeks niet wijzigen met vierkante haakjes. Ook al ziet u mogelijk geen foutmelding, een poging om str[0] = "A" uit te voeren, zal de tekenreeks niet daadwerkelijk veranderen.
+      </p><br>
+      <div class="grid5">
+        <div class="voorbeelden">Enkele voorbeelden</div>
+        <div class="resultaten">Resultaten</div>
+        <div class="vb">"Niemand is Perfect"[0]</div><div class="res">N</div>
+        <div class="vb">"Niemand is Perfect"[0] = "A"</div><div class="res">Niemand is Perfect</div>
+        <div class="vb">"Niemand is Perfect"[11]</div><div class="res">P</div>
+        <div class="wrap">
+          <div class="uw-input">
+            <div class="vb"><input type="text" id="grid5_input_1" placeholder="uw tekst"></div>
+            <div class="vb"><input type="text" id="grid5_input_2" placeholder="uw index"></div>
+            <div><button class="klik" onclick="string_array()">Klik hier</button></div></div>
+        </div>
+        <div class="grid5_res" id="grid5_res"></div>
+    </div>
+  </div>
+
+<!-- String slice() -->
+
+<div id="string-slice">
+      <h2 class="keuze-string">'String slice()'</h2><br>
+      <p>Je kunt op drie verschillende manieren een stuk tekst uit een string halen:<br><br>slice(start, end)<br><br>
+        substring(start, end)<br><br>substr(start, length)<br><br>
+        Met de slice()-methode kun je een deel van een string nemen en met alleen dat deel een nieuwe string maken.
+        <br>
+        Je vertelt waar het moet beginnen en waar het moet eindigen (maar de eindpositie is niet opgenomen in de nieuwe string).
+      </p><br>
+      <div class="grid6">
+        <div class="voorbeelden">Enkele voorbeelden</div>
+        <div class="resultaten">Resultaten</div>
+        <div class="vb">"Aardbei, Citroen, Framboos".slice(9, 16)</div><div class="res">Citroen</div>
+        <div class="vb">"Aardbei, Citroen, Framboos".slice(18,26)</div><div class="res">Framboos</div>
+        <div class="vb">"Aardbei, Citroen, Framboos".slice(0, 7)</div><div class="res">Aardbei</div>
+        <div class="vb">"Aardbei, Citroen, Framboos".slice(22, 26)</div><div class="res">boos</div>
+        <div class="vb">"Aardbei, Citroen, Framboos".slice(19,22)</div><div class="res">ram</div>
+        <div class="wrap">
+          <div class="uw-input">
+            <div class="vb"><input type="text" id="grid6_input_1" placeholder="uw tekst"></div>
+            <div class="vb"><input type="number" id="grid6_input_2" placeholder="start-index"></div>
+            <div class="vb"><input type="number" id="grid6_input_3" placeholder="eind-index"></div>
+          <div>
+            <button class="klik" onclick="string_slice()">Klik hier</button></div>
+        </div>
+      </div>
+        <div class="grid6_res" id="grid6_res"></div>
+      </div>
+    </div>
+
+<!-- String substring() -->
+
+    <div id="string-substring">
+      <h2 class="keuze-string">'String substring()'</h2><br>
+      <p>De methode substring() lijkt sterk op slice().<br>
+        Het belangrijkste verschil is dat als je negatieve getallen probeert te gebruiken voor de begin- of eindpositie, substring() deze als 0 behandelt, terwijl slice() ze anders behandelt.
+      </p><br>
+      <div class="grid7">
+        <div class="voorbeelden">Enkele voorbeelden</div>
+        <div class="resultaten">Resultaten</div>
+        <div class="vb33">"Prei, Wortel, Raap"<span class="white-on-purple">.slice</span>(-2, 6)</div>
+        <div class="res33">empty string</div>
+        <div class="vb34">"Prei, Wortel, Raap"<span class="white-on-purple">.substring</span>(-2, 6)</div>
+        <div class="res34">Prei,</div>
+        <div class="wrap">
+          <div class="uw-input">
+            <div class="vb35">
+              <input type="text" id="zelf7" placeholder="uw tekst">
+            </div>
+            <div class="vb35-2">
+              <input type="number" id="zelf7-2" placeholder="start-index">
+            </div>
+            <div class="vb35-3">
+              <input type="number" id="zelf7-3" placeholder="eind-index">
+          </div>
+          <div>
+            <button class="klik" onclick="result35()">Klik hier</button></div>
+        </div>
+      </div>
+        <div class="res35" id="res35"></div>
+      </div>
+    </div>
+
+<!--
+  String substr()
+-->
+
+    <div class="string-substr" id="string-substr">
+      <h2 class="keuze-string">'String substr()'</h2><br>
+      <p>De methode substr() lijkt ook op slice(), maar in plaats van er een eindpositie aan te geven, vertel je  
+        hoeveel tekens je wilt extraheren.
+      </p><br>
+      <div class="grid8">
+        <div class="voorbeelden">Enkele voorbeelden</div>
+        <div class="resultaten">Resultaten</div>
+        <div class="vb36">"Kat, Paard, Hond".substr(0, 3)</div>
+        <div class="res36">Kat</div>
+        <div class="vb37">"Kat, Paard, Hond".substr(12, 4)</div>
+        <div class="res37">Hond</div>
+        <div class="wrap">
+          <div class="uw-input">
+            <div class="vb38">
+              <input type="text" id="zelf8" placeholder="uw tekst">
+            </div>
+            <div class="vb38-2">
+              <input type="number" id="zelf8-2" placeholder="start-index">
+            </div>
+            <div class="vb38-3">
+              <input type="number" id="zelf8-3" placeholder="aantal tekens">
+          </div>
+          <div>
+            <button class="klik" onclick="result38()">Klik hier</button></div>
+        </div>
+      </div>
+        <div class="res38" id="res38"></div>
+      </div>
+    </div>
+
+<!--
+  String toUpperCase()
+-->
+
+    <div class="string-toUpperCase" id="string-toUpperCase">
+      <h2 class="keuze-string">'String toUpperCase()'</h2><br>
+      <p>U kunt alle letters in een tekstreeks in hoofdletters wijzigen met behulp van de methode toUpperCase().</p>
+      <br>
+      <div class="grid9">
+        <div class="voorbeelden">Voorbeeld</div>
+        <div class="resultaten">Resultaat</div>
+        <div class="vb39">"AbCdEfGhIjKlMnOpQrStUvWxYz".toUpperCase()</div>
+        <div class="res39">ABCDEFGHIJKLMNOPQRSTUVWXYZ</div>
+        <div class="wrap">
+          <div class="uw-input">
+            <div class="vb40">
+              <input type="text" id="zelf9" placeholder="uw tekst">
+            </div>
+          <div>
+            <button class="klik" onclick="result40()">Klik hier</button></div>
+        </div>
+      </div>
+        <div class="res40" id="res40"></div>
+      </div>
+    </div>
+
+<!--
+  String toLowerCase()
+-->
+
+    <div class="string-toLowerCase" id="string-toLowerCase">
+      <h2 class="keuze-string">'String toLowerCase()'</h2><br>
+      <p>U kunt alle letters in een tekstreeks in kleine letters wijzigen met behulp van de methode toLowerCase()</p>
+      <br>
+      <div class="grid10">
+        <div class="voorbeelden">Voorbeeld</div>
+        <div class="resultaten">Resultaat</div>
+        <div class="vb41">"AbCdEfGhIjKlMnOpQrStUvWxYz".toLowerCase()</div>
+        <div class="res41">abcdefghijklmnopqrstuvwxyz</div>
+        <div class="wrap">
+          <div class="uw-input">
+            <div class="vb42">
+              <input type="text" id="zelf10" placeholder="uw tekst">
+            </div>
+          <div>
+            <button class="klik" onclick="result42()">Klik hier</button></div>
+        </div>
+      </div>
+        <div class="res42" id="res42"></div>
+      </div>
+    </div>
+
+<!--
+  String concat()
+-->
+
+    <div class="string-concat" id="string-concat">
+      <h2 class="keuze-string">'String concat()'</h2><br>
+      <p>De methode concat() combineert twee of meer strings in één enkele, langere string.<br><br>TIP: als je spatie wil tussen je teksten moet je wel een spatie intikken aan het einde van uw vorige tekst, of aan het begin van de volgende tekst...</p><br>
+      <div class="grid11">
+        <div class="voorbeelden">Voorbeeld</div>
+        <div class="resultaten">Resultaten</div>
+        <div class="vb43">"Peter".concat("Opsomer")</div>
+        <div class="res43">PeterOpsomer</div>
+        <div class="vb44">"Kat, Paard, ".concat("Hond")</div>
+        <div class="res44">Kat, Paard, Hond</div>
+        <div class="wrap">
+          <div class="uw-input">
+            <div class="vb45">
+              <input type="text" id="zelf11" placeholder="tekst 1">
+            </div>
+            <div class="vb45-2">
+              <input type="text" id="zelf11-2" placeholder="tekst 2">
+            </div>
+            <div class="vb45-3">
+              <input type="text" id="zelf11-3" placeholder="tekst 3">
+          </div>
+          <div>
+            <button class="klik" onclick="result45()">Klik hier</button></div>
+        </div>
+      </div>
+        <div class="res45" id="res45"></div>
+      </div>
+    </div>
+
+<!--
+  String trim()
+-->
+
+    <div class="string-trim" id="string-trim">
+      <h2 class="keuze-string">'String trim()'</h2><br>
+      <p>De trim() methode verwijdert eventuele extra spaties aan het begin en einde van een string.</p><br>
+      <div class="grid12">
+        <div class="voorbeelden">Voorbeeld</div>
+        <div class="resultaten">Resultaat (Hou geen rekening met de sterren, deze werden door mij toegevoegd om het begin en einde van de string te markeren.)</div>
+        <div class="vb46"><span style="background-color: rgb(97, 236, 97); color:#000">"&nbsp;&nbsp;&nbsp;&nbsp;geen spaties vooraan en achteraan&nbsp;&nbsp;&nbsp;&nbsp;"</span>.trim()</div>
+        <div class="res46"><span style="background-color: rgb(97, 236, 97); color:#000">geen spaties vooraan en achteraan</span></div>
+        <div class="wrap">
+          <div class="uw-input">
+            <div class="vb47">
+              <input type="text" id="zelf12" placeholder="uw tekst">
+            </div>
+          <div>
+            <button class="klik" onclick="result47()">Klik hier</button></div>
+        </div>
+      </div>
+        <div class="res47" id="res47"></div>
+      </div>
+    </div>
+
+<!--
+  String trimStart()
+-->
+
+<div class="string-trimstart" id="string-trimstart">
+      <h2 class="keuze-string">'String trimStart()'</h2><br>
+      <p>
+        JavaScript heeft in 2019 een nieuwe tool gekregen genaamd trimStart(). Deze methode is vergelijkbaar met trim() maar verwijdert alleen spaties aan het begin van een string, waardoor eventuele spaties aan het einde onaangeroerd blijven.
+      </p><br>
+      <div class="grid13">
+        <div class="voorbeelden">Voorbeeld</div>
+        <div class="resultaten">Resultaat (Hou geen rekening met de sterren, deze werden door mij toegevoegd om het begin en einde van de string te markeren.)</div>
+        <div class="vb48"><span style="background-color: rgb(252, 150, 150); color:#000">"&nbsp;&nbsp;&nbsp;&nbsp;Geen spaties vooraan&nbsp;&nbsp;&nbsp;&nbsp;"</span>.trimStart()</div>
+        <div class="res48"><span style="background-color: rgb(252, 150, 150); color:#000">Geen spaties vooraan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+        <div class="wrap">
+          <div class="uw-input">
+            <div class="vb49">
+              <input type="text" id="zelf13" placeholder="uw tekst">
+            </div>
+          <div>
+            <button class="klik" onclick="result49()">Klik hier</button></div>
+        </div>
+      </div>
+        <div class="res49" id="res49"></div>
+      </div>
+    </div>
+
+<!--
+  String trimEnd()
+-->
+
+    <div class="string-trimend" id="string-trimend">
+      <h2 class="keuze-string">'String trimEnd()'</h2><br>
+      <p>
+        In 2019 kreeg JavaScript een nieuwe methode genaamd trimEnd(). Het werkt als trim(), maar richt zich alleen op het verwijderen van spaties aan het einde van een string, en laat eventuele spaties aan het begin met rust.
+      </p><br>
+      <div class="grid14">
+        <div class="voorbeelden">Voorbeeld</div>
+        <div class="resultaten">Resultaat (Hou geen rekening met de sterren, deze werden door mij toegevoegd om het begin en einde van de string te markeren.)</div>
+        <div class="vb50"><span style="background-color: yellow; color:#000f">"&nbsp;&nbsp;&nbsp;&nbsp;Geen spaties achteraan&nbsp;&nbsp;&nbsp;&nbsp;"</span>.trimStart()</div>
+        <div class="res50"><span style="background-color: yellow; color:#000">&nbsp;&nbsp;&nbsp;&nbsp;Geen spaties achteraan</span></div>
+        <div class="wrap">
+          <div class="uw-input">
+            <div class="vb51">
+              <input type="text" id="zelf14" placeholder="uw tekst">
+            </div>
+          <div>
+            <button class="klik" onclick="result51()">Klik hier</button></div>
+        </div>
+      </div>
+        <div class="res51" id="res51"></div>
+      </div>
+    </div>
+
+<!--
+  String padStart()
+-->
+
+    <div class="string-padstart" id="string-padstart">
+      <h2 class="keuze-string">'String padStart()'</h2><br>
+      <p>
+        De methode padStart() voegt tekens toe aan het begin van een tekenreeks totdat deze een specifieke lengte bereikt. Je kunt kiezen welk teken je wilt gebruiken voor opvulling, en het zal dat teken zo vaak herhalen als nodig is.
+      </p><br>
+      <div class="grid15">
+        <div class="voorbeelden">Enkele voorbeelden</div>
+        <div class="resultaten">Resultaten</div>
+        <div class="vb52">"Voeg karakter(s) vooraan toe"[0]</div>
+        <div class="res52">N</div>
+        <div class="vb53">"Voeg karakter(s) vooraan toe"[0] = "A"</div>
+        <div class="res53">Voeg karakter(s) vooraan toe</div>
+        <div class="vb54">"Voeg karakter(s) vooraan toe"[11]</div>
+        <div class="res54">P</div>
+        <div class="wrap">
+          <div class="uw-input">
+            <div class="vb55">
+              <input type="text" id="zelf15" placeholder="Tekst">
+            </div>
+            <div class="vb55-2">
+              <input type="text" id="zelf15-2" placeholder="Karakter">
+            </div>
+            <div class="vb55-3">
+              <input type="text" id="zelf15-3" placeholder="string-lengte">
+            </div>
+            <div><button class="klik" onclick="result55()">Klik hier</button></div>
+          </div>
+        </div>
+        <div class="res55" id="res55"></div>
+    </div>
+    </div>
+
+<!--
+  String padEnd()
+-->
+
+    <div class="string-padend" id="string-padend">
+      <h2 class="keuze-string">'String padEnd()'</h2><br>
+      <p>
+        De methode padEnd() voegt tekens toe aan het einde van een tekenreeks totdat deze een specifieke lengte bereikt. Je kunt kiezen welk teken je wilt gebruiken voor opvulling, en het zal dat teken zo vaak herhalen als nodig is.
+      </p><br>
+      <div class="grid16">
+        <div class="voorbeelden">Enkele voorbeelden</div>
+        <div class="resultaten">Resultaten</div>
+        <div class="vb56">"Voeg karakter(s) achteraan toe"[0]</div>
+        <div class="res56">N</div>
+        <div class="vb57">"Voeg karakter(s) achteraan toe"[0] = "A"</div>
+        <div class="res57">Voeg karakter(s) achteraan toe</div>
+        <div class="vb58">"Voeg karakter(s) achteraan toe"[11]</div>
+        <div class="res58">P</div>
+        <div class="wrap">
+          <div class="uw-input">
+            <div class="vb59">
+              <input type="text" id="zelf16" placeholder="Tekst">
+            </div>
+            <div class="vb59-2">
+              <input type="text" id="zelf16-2" placeholder="Karakter">
+            </div>
+            <div class="vb59-3">
+              <input type="text" id="zelf16-3" placeholder="string-lengte">
+            </div>
+            <div><button class="klik" onclick="result60()">Klik hier</button></div>
+          </div>
+        </div>
+        <div class="res60" id="res60"></div>
+      </div>
+    </div>
+
+<!--
+  String repeat()
+-->
+
+    <div class="string-repeat" id="string-repeat">
+      <h2 class="keuze-string">'String repeat()'</h2><br>
+      <p>
+        De repeat()-methode maakt een nieuwe tekenreeks die meerdere kopieën van een originele tekenreeks bevat. U vertelt hoeveel exemplaren u wilt. De originele string zelf blijft ongewijzigd.
+      </p><br><br>
+      <div class="grid17">
+        <div class="voorbeelden">Enkele voorbeelden</div>
+        <div class="resultaten">Resultaten</div>
+        <div class="vb60">"String Kopiëren".repeat(2)</div>
+        <div class="res60">String KopiërenString Kopiëren</div>
+        <div class="vb61">"String Kopiëren".repeat(3)</div>
+        <div class="res61">String KopiërenString KopiërenString Kopiëren</div>
+        <div class="wrap">
+          <div class="uw-input">
+            <div class="vb62">
+              <input type="text" id="zelf17" placeholder="Tekst">
+            </div>
+            <div class="vb62-2">
+              <input type="number" id="zelf17-2" placeholder="Aantal kopies">
+            </div>
+            <div><button class="klik" onclick="result62()">Klik hier</button></div>
+          </div>
+        </div>
+        <div class="res62" id="res62"></div>
+      </div>
+    </div>
+
+<!--
+  String replace()
+-->
+
+    <div class="string-replace" id="string-replace">
+      <h2 class="keuze-string">'String replace()'</h2><br>
+      <p>
+        Met de methode replace() kun je een specifiek deel van een string vinden en dit vervangen door iets anders.
+        <br><br>Alleen het eerste deeltje tekst dat gelijk is aan de zoektekst wordt vervangen. Komen er nog zulke stukjes tekst voor, dan worden die niet vervangen.
+      </p><br>
+      <div class="grid18">
+        <div class="voorbeelden">Enkele voorbeelden</div>
+        <div class="resultaten">Resultaten</div>
+        <div class="vb63">"blablabla".replace("la", "xx")</div>
+        <div class="res63">bxxblabla</div>
+        <div class="vb64">"String Kopiëren".replace("Kopië", "Duplice" )</div>
+        <div class="res64">String Dupliceren</div>
+        <div class="wrap">
+          <div class="uw-input">
+            <div class="vb65">
+              <input type="text" id="zelf18" placeholder="Tekst">
+            </div>
+            <div class="vb65-2">
+              <input type="text" id="zelf18-2" placeholder="Zoek tekst">
+            </div>
+            <div class="vb65-3">
+              <input type="text" id="zelf18-3" placeholder="Vervang met">
+            </div>
+            <div><button class="klik" onclick="result65()">Klik hier</button></div>
+          </div>
+        </div>
+        <div class="res65" id="res65"></div>
+      </div>
+    </div>
+
+<!--
+  String replaceAll()
+-->
+
+<div class="string-replace-all" id="string-replace-all">
+      <h2 class="keuze-string">'String replaceAll()'</h2><br>
+      <p>
+        JavaScript heeft in 2021 een nieuwe stringmethode gekregen, genaamd replaceAll(). Deze methode is vergelijkbaar met replace(), maar laat je een reguliere expressie gebruiken (waarbij de vlag 'g' is ingesteld) om meerdere exemplaren van een patroon binnen een string te vinden en te vervangen. Als u geen reguliere expressie met de 'g'-vlag gebruikt, krijgt u een foutmelding.
+      </p><br>
+      <div class="grid19">
+        <div class="voorbeelden">Enkele voorbeelden</div>
+        <div class="resultaten">Resultaten</div>
+        <div class="vb66">"blablabla".replace("la", "xx")</div>
+        <div class="res66">bxxblabla</div>
+        <div class="vb67">"String Kopiëren".replace("Kopië", "Duplice" )</div>
+        <div class="res67">String Dupliceren</div>
+        <div class="wrap">
+          <div class="uw-input">
+            <div class="vb68">
+              <input type="text" id="zelf19" placeholder="Tekst">
+            </div>
+            <div class="vb68-2">
+              <input type="text" id="zelf19-2" placeholder="Zoek tekst">
+            </div>
+            <div class="vb68-3">
+              <input type="text" id="zelf19-3" placeholder="Vervang met">
+            </div>
+            <div><button class="klik" onclick="result68()">Klik hier</button></div>
+          </div>
+        </div>
+        <div class="res68" id="res68"></div>
+      </div>
+    </div>
+
+<!--
+  String split()
+-->
+
+<div class="string-split" id="string-split">
+      <h2 class="keuze-string">'String split()'</h2><br>
+      <p>
+        Je kunt een string in een array van kleinere stukjes veranderen met behulp van de split()-methode. Als je niet vertelt hoe de string moet worden gesplitst (dat wil zeggen: je geeft er geen scheidingsteken aan), dan zal de hele string het enige item in de array zijn. Als u echter zegt dat het moet splitsen met een lege tekenreeks (""), wordt de tekenreeks opgesplitst in een reeks afzonderlijke tekens.
+      </p><br>
+      <div class="grid20">
+        <div class="voorbeelden">Enkele voorbeelden</div>
+        <div class="resultaten">Resultaten</div>
+        <div class="vb69">"abcdabc".split('d')</div>
+        <div class="res69">[ 'abc', 'abc' ]</div>
+        <div class="vb70">"Muis, Kikker, Hond, Ezel".split(",")</div>
+        <div class="res70">[ 'Muis', ' Kikker', ' Hond', ' Ezel' ]</div>
+        <div class="wrap">
+          <div class="uw-input">
+            <div class="vb71">
+              <input type="text" id="zelf20" placeholder="Tekst">
+            </div>
+            <div class="vb71-2">
+              <input type="text" id="zelf20-2" placeholder="Scheidingsteken">
+            </div>
+            <div><button class="klik" onclick="result71()">Klik hier</button></div>
+          </div>
+        </div>
+        <div class="res71" id="res71"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
