@@ -2,11 +2,21 @@
 
 *,*::after,*::before {margin: 0;padding: 0;box-sizing: border-box}
 
+body {background-color: #444;color: #fff;font-size:17px;text-align: center}
+
+:root {--input-font-size: 1.4rem}
+
+#grid1_input_1, #grid2_input_1, #grid2_input_2, #grid3_input_1, #grid3_input_2, #grid4_input_1, #grid4_input_2, #grid5_input_1, #grid5_input_2, #grid6_input_1, #grid6_input_2, #grid6_input_3, #grid7_input_1, #grid7_input_2, #grid7_input_3, #grid8_input_1, #grid8_input_2, #grid8_input_3, #grid9_input_1, #grid10_input_1, #grid11_input_1, #grid11_input_2, #grid11_input_3, #grid12_input_1, #grid13_input_1, #grid14_input_1, #grid15_input_1, #grid15_input_2, #grid15_input_3, #grid16_input_1, #grid16_input_2, #grid16_input_3, #grid17_input_1, #grid17_input_2, #grid18_input_1, #grid18_input_2, #grid18_input_3, #grid19_input_1, #grid19_input_2, #grid19_input_3, 
+#grid20_input_1, #grid20_input_2, #grid20_input_3 {
+  font-size: var(--input-font-size);
+}
+
 a {text-decoration: none;color: #fff}
 a:hover {font-size: 1.07rem;color: #000;background-color: #d4f5c0;letter-spacing: 0.1rem}
 
-body {background-color: #444;color: #fff;text-align: center;font-size: 17px}
-
+.bla-gre {background-color: #61ec61; color:#000}
+.bla-pin {background-color: #fc9696; color:#000}
+.bla-yel {background-color:yellow; color:#000}
 
 button {background-color: #efc16c;width: 98%;height: 2rem;border-radius: 50px;padding-left: 2rem;font-size: 1rem}
 
@@ -19,13 +29,13 @@ button {background-color: #efc16c;width: 98%;height: 2rem;border-radius: 50px;pa
 .grid1 > div {background-color: #cff8f8}
 .grid2 {background-color: green} .grid2 > div {background-color: #cdf6cd}
 .grid3 {background-color: yellow} .grid3 > div {background-color: #ffffc8}
-.grid4 {background-color: orange} .grid4 > div {background-color: hwb(47 68% 0%)}
+.grid4 {background-color: orange} .grid4 > div {background-color: #ffedad}
 .grid5 {background-color: #ff00cc} .grid5 > div {background-color: #f0cae5}
 .grid6 {background-color: #91d5fa} .grid6 > div {background-color: #e1e1e1c3}
 .grid7 {background-color: purple} .grid7 > div {background-color: #fc98fc}
-.grid8 {background-color: brown} .grid8 > div {background-color: burlywood}
+.grid8 {background-color: brown} .grid8 > div {background-color: #deb887}
 .grid9 {background-color: blue} .grid9 > div {background-color: #cbcbf2}
-.grid10 {background-color: green}.grid13 {background-color: crimson} .grid10 > div {background-color: #c7f5c7}
+.grid10 {background-color: green} .grid10 > div {background-color: #c7f5c7}
 .grid11 {background-color: #fe99aa} .grid11 > div {background-color: #f5d9de}
 .grid12 {background-color: chartreuse} .grid12 > div {background-color: #e4f7d2}
 .grid13 {background-color: crimson} .grid13 > div {background-color: #e5c0c8}
@@ -39,12 +49,10 @@ button {background-color: #efc16c;width: 98%;height: 2rem;border-radius: 50px;pa
 
 h1 {margin-top: 3rem;margin-bottom: 1.5rem;font-size: 1.5rem;font-family: Aclonica;letter-spacing: 0.1rem}
 
-input {margin-left: 1%;margin-right: 1%;width: 98%;font-size: 0.9rem;padding: 0.5rem}
+input {margin-left: 1%;margin-right: 1%;width: 98%;padding: 0.5rem}
 
 .keuze-titel {background-color: yellow;color: #000;padding: 0.5rem;font-size: 1.3rem}
-
 .keuze-string {background-color: #d2ffc0;color: #000;padding: 0.5rem;font-size: 1.3rem}
-
 .keuzes-container {display: grid;grid-template-columns: repeat(3,1fr);row-gap: 1.3rem;height: auto;text-align: left}
 
 .klik {margin-top: 1.2rem;padding: 0.3rem}
@@ -53,10 +61,9 @@ input {margin-left: 1%;margin-right: 1%;width: 98%;font-size: 0.9rem;padding: 0.
 
 .ora {background-color: #ffd07a}
 
-.res47, .res49, .res51 {white-space: pre}
+.grid12_res, .grid13_res, .grid14_res {white-space: pre}  /* meerdere spaties aanvaarden */
 
-.resultaten, .voorbeelden, .vb, .vb33, .vb34, .vb35, .vb35-2, .vb35-3, .vb36, .vb37, .vb38, .vb38-2, .vb38-3, .vb39, .vb40, .vb41, .vb42, .vb43, .vb44, .vb45, .vb45-2, .vb45-3, .vb46, .vb47, .vb48, .vb49, .vb50, .vb51, .vb52, .vb53, .vb54, .vb55, .vb55-2, .vb55-3, .vb56, .vb57, .vb58, .vb59, .vb59-2, .vb59-3, .vb60, .vb61, .vb62, .vb62-2, .vb63, .vb64, .vb65, .vb65-2, .vb65-3, .vb66, .vb67, .vb68, .vb68-2, .vb68-3, .vb69, .vb70, .vb71, .vb71-2,
-.res, .grid1_res, .grid2_res, .grid3_res, .grid4_res, .grid5_res, .res30, .res31, .res32, .res33, .res34, .res35, .res36, .res37, .res38, .res39, .res40, .res41, .res42, .res43, .res44, .res45, .res46, .res47, .res48, .res49, .res50, .res51, .res52, .res53, .res54, .res55, .res56, .res57, .res58, .res59, .res60, .res61, .res62, .res63, .res64, .res65, .res66, .res67, .res68, .res69, .res70, .res71 {
+.resultaten, .voorbeelden, .vb, .res, .grid1_res, .grid2_res, .grid3_res, .grid4_res, .grid5_res, .grid6_res, .grid7_res, .grid8_res, .grid9_res, .grid10_res, .grid11_res, .grid12_res, .grid13_res, .grid14_res, .grid15_res, .grid16_res, .grid17_res, .grid18_res, .grid19_res, .grid20_res {
   text-align: center;padding: 0.5rem;font-weight: bold;font-style: italic;font-size: 1.3rem;
 }
 
@@ -64,59 +71,22 @@ input {margin-left: 1%;margin-right: 1%;width: 98%;font-size: 0.9rem;padding: 0.
 
 .voorbeelden {grid-column: 1/2}
 
-.vb, .vb33, .vb34, .vb35, .vb35-2, .vb35-3, .vb36, .vb37, .vb38, .vb38-2, .vb38-3, .vb39, .vb40, .vb41, .vb42, .vb43, .vb44, .vb45, .vb45-2, .vb45-3, .vb46, .vb47, .vb48, .vb49, .vb50, .vb51, .vb52, .vb53, .vb54, .vb55, .vb55-2, .vb55-3, .vb56, .vb57, .vb58, .vb59, .vb59-2, .vb59-3, .vb60, .vb61, .vb62, .vb62-2, .vb63, .vb64, .vb65, .vb65-2, .vb65-3, .vb66, .vb67, .vb68, .vb68-2, .vb68-3, .vb69, .vb70, .vb71, .vb71-2 {
-  grid-column: 1/2;
-}
+.vb {grid-column: 1/2}
 
-.res, .grid1_res, .grid2_res, .grid3_res, .grid4_res, .grid5_res, .res30, .res31, .res32, .res33, .res34, .res35, .res36, .res37, .res38, .res39, .res40, .res41, .res42, .res43, .res44, .res45, .res46, .res47, .res48, .res49, .res50, .res51 .res52, .res53, .res54, .res55, .res60, .res61, .res62, .res62-2, .res63, .res64, .res65, .res66, .res67, .res68, .res69{
+.res, .grid1_res, .grid2_res, .grid3_res, .grid4_res, .grid5_res, .grid6_res, .grid7_res, .grid8_res, .grid9_res, .grid10_res, .grid11_res, .grid12_res, .grid13_res, .grid14_res, .grid15_res, .grid16_res, .grid17_res, .grid18_res, .grid19_res, .grid20_res {
   grid-column: 2/3;
 }
 
 .white-on-purple {background-color: purple; color: #fff}
 
-#grid1_input_1, #grid2_input_1, #grid2_input_2, #grid3_input_1, #grid3_input_2, #grid4_input_1, #grid4_input_2,#grid5_input_1, #grid5_input_2, #grid6_input_1, #grid6_input_2, #grid6_input_3, #zelf7, #zelf7-2, #zelf7-3, #zelf8, #zelf8-2, #zelf8-3, #zelf9, #zelf10, #zelf11, #zelf11-2, #zelf11-3, #zelf12, #zelf13, #zelf14, #zelf15, #zelf16, #zelf16-2, #zelf16-3, #zelf17, #zelf17-2, #zelf18, #zelf18-2, #zelf18-3, #zelf19, #zelf19-2, #zelf19-3, #zelf20, #zelf20-2, #zelf20-2 {
-  font-size: 1.3rem;
-}
-
 .uw-input {display: grid;grid-template-columns: 55% 45%}
 
-@media (max-width: 1340px) {
-  #grid1_input_1, #grid2_input_1, #grid2_input_2, #grid3_input_1, #grid3_input_2, #grid4_input_1, #grid4_input_2,#grid5_input_1, #grid5_input_2, #grid6_input_1, #grid6_input_2, #grid6_input_3, #zelf7, #zelf7-2, #zelf7-3, #zelf8, #zelf8-2, #zelf8-3, #zelf9, #zelf10, #zelf11, #zelf11-2, #zelf11-3,  #zelf12, #zelf13, #zelf14, #zelf15, #zelf16, #zelf16-2, #zelf16-3, #zelf17, #zelf17-2, #zelf18, #zelf18-2, #zelf18-3, #zelf19, #zelf19-2, #zelf19-3, #zelf20, #zelf20-2, #zelf20-2 {font-size: 20px};
-}
-
-@media (max-width: 1270px) {
-  #grid1_input_1, #grid2_input_1, #grid2_input_2, #grid3_input_1, #grid3_input_2, #grid4_input_1, #grid4_input_2,#grid5_input_1, #grid5_input_2, #grid6_input_1, #grid6_input_2, #grid6_input_3, #zelf7, #zelf7-2, #zelf7-3, #zelf8, #zelf8-2, #zelf8-3, #zelf9, #zelf10, #zelf11, #zelf11-2, #zelf11-3,  #zelf12, #zelf13, #zelf14, #zelf15, #zelf16, #zelf16-2, #zelf16-3, #zelf17, #zelf17-2, #zelf18, #zelf18-2, #zelf18-3, #zelf19, #zelf19-2, #zelf19-3, #zelf20, #zelf20-2, #zelf20-2 {font-size: 19px};
-}
-
-@media (max-width: 1240px) {
-  #grid1_input_1, #grid2_input_1, #grid2_input_2, #grid3_input_1, #grid3_input_2, #grid4_input_1, #grid4_input_2,#grid5_input_1, #grid5_input_2, #grid6_input_1, #grid6_input_2, #grid6_input_3, #zelf7, #zelf7-2, #zelf7-3, #zelf8, #zelf8-2, #zelf8-3, #zelf9, #zelf10, #zelf11, #zelf11-2, #zelf11-3, #zelf12, #zelf13, #zelf14, #zelf15, #zelf16, #zelf16-2, #zelf16-3, #zelf17, #zelf17-2, #zelf18, #zelf18-2, #zelf18-3, #zelf19, #zelf19-2, #zelf19-3, #zelf20, #zelf20-2, #zelf20-2 {font-size: 18px};
-}
-
-@media (max-width: 1170px) {
-  #grid1_input_1, #grid2_input_1, #grid2_input_2, #grid3_input_1, #grid3_input_2, #grid4_input_1, #grid4_input_2,#grid5_input_1, #grid5_input_2, #grid6_input_1, #grid6_input_2, #grid6_input_3, #zelf7, #zelf7-2, #zelf7-3, #zelf8, #zelf8-2, #zelf8-3, #zelf9, #zelf10, #zelf11, #zelf11-2, #zelf11-3,  #zelf12, #zelf13, #zelf14, #zelf15, #zelf16, #zelf16-2, #zelf16-3, #zelf17, #zelf17-2, #zelf18, #zelf18-2, #zelf18-3, #zelf19, #zelf19-2, #zelf19-3, #zelf20, #zelf20-2, #zelf20-2 {font-size: 18px};
-}
-
-@media (max-width: 1100px) {
-  #grid1_input_1, #grid2_input_1, #grid2_input_2, #grid3_input_1, #grid3_input_2, #grid4_input_1, #grid4_input_2,#grid5_input_1, #grid5_input_2, #grid6_input_1, #grid6_input_2, #grid6_input_3, #zelf7, #zelf7-2, #zelf7-3, #zelf8, #zelf8-2, #zelf8-3, #zelf9, #zelf10, #zelf11, #zelf11-2, #zelf11-3,  #zelf12, #zelf13, #zelf14, #zelf15, #zelf16, #zelf16-2, #zelf16-3, #zelf17, #zelf17-2, #zelf18, #zelf18-2, #zelf18-3, #zelf19, #zelf19-2, #zelf19-3, #zelf20, #zelf20-2, #zelf20-2 {font-size: 16px};
-}
-
-@media (max-width: 1040px) {
-  #grid1_input_1, #grid2_input_1, #grid2_input_2, #grid3_input_1, #grid3_input_2, #grid4_input_1, #grid4_input_2,#grid5_input_1, #grid5_input_2, #grid6_input_1, #grid6_input_2, #grid6_input_3, #zelf7, #zelf7-2, #zelf7-3, #zelf8, #zelf8-2, #zelf8-3, #zelf9, #zelf10, #zelf11, #zelf11-2, #zelf11-3,  #zelf12, #zelf13, #zelf14, #zelf15, #zelf16, #zelf16-2, #zelf16-3, #zelf17, #zelf17-2, #zelf18, #zelf18-2, #zelf18-3, #zelf19, #zelf19-2, #zelf19-3, #zelf20, #zelf20-2, #zelf20-2 {font-size: 15px};
-}
-
-@media (max-width: 1020px) {
-  #grid1_input_1, #grid2_input_1, #grid2_input_2, #grid3_input_1, #grid3_input_2, #grid4_input_1, #grid4_input_2,#grid5_input_1, #grid5_input_2, #grid6_input_1, #grid6_input_2, #grid6_input_3, #zelf7, #zelf7-2, #zelf7-3, #zelf8, #zelf8-2, #zelf8-3, #zelf9, #zelf10, #zelf11, #zelf11-2, #zelf11-3,  #zelf12, #zelf13, #zelf14, #zelf15, #zelf16, #zelf16-2, #zelf16-3, #zelf17, #zelf17-2, #zelf18, #zelf18-2, #zelf18-3, #zelf19, #zelf19-2, #zelf19-3, #zelf20, #zelf20-2, #zelf20-2 {font-size: 14px};
-}
-
-@media (max-width: 630px) {
-  #grid1_input_1, #grid2_input_1, #grid2_input_2, #grid3_input_1, #grid3_input_2, #grid4_input_1, #grid4_input_2,#grid5_input_1, #grid5_input_2, #grid6_input_1, #grid6_input_2, #grid6_input_3, #zelf7, #zelf7-2, #zelf7-3, #zelf8, #zelf8-2, #zelf8-3, #zelf9, #zelf10, #zelf11, #zelf11-2, #zelf11-3,  #zelf12, #zelf13, #zelf14, #zelf15, #zelf16, #zelf16-2, #zelf16-3, #zelf17, #zelf17-2, #zelf18, #zelf18-2, #zelf18-3, #zelf19, #zelf19-2, #zelf19-3, #zelf20, #zelf20-2, #zelf20-2 {font-size: 10px};
-}
+@media (max-width: 1040px) {:root {--input-font-size: 1.3rem}}
+@media (max-width: 800px) {:root {--input-font-size: 1.2rem}}
+@media (max-width: 630px) {:root {--input-font-size: 1rem}}
+@media (max-width: 600px) {:root {--input-font-size: 0.9rem}}
 
 @media (max-width: 610px) {
-  h1, input, .keuze-titel, .keuze-string,.voorbeelden,
-  .vb, .vb33, .vb34, .vb35, .vb35-2, .vb35-3, .vb36, .vb37, .vb38, .vb38-2, .vb38-3, .vb39, .vb40, .vb41, .vb42, .vb43, .vb44, .vb45, .vb45-2, .vb45-3, .vb46, .vb47, .vb48, .vb49, .vb50, .vb51, .vb52, .vb53, .vb54, .vb55, .vb55-2, .vb55-3, .vb56, .vb57, .vb58, .vb59, .vb59-2, .vb59-3, .vb60, .vb61, .vb62, .vb62-2, .vb63, .vb64, .vb65, .vb65-2, .vb65-3, .vb66, .vb67, .vb68, .vb68-2, .vb68-3, .vb69, .vb70, .vb71, .vb71-2,
-  .res, .grid1_res, .grid2_res, .grid3_res, .grid4_res, .grid5_res, .res30, .res31, .res32, .res33, .res34 .res35, .res36, .res37, .res38, .res39, .res40, .res41, .res42, .res43, .res44, .res45, .res46, .res47, .res48, .res49, .res50, .res51, .res52, .res53, .res54, .res55, .res60, .res61, .res62, .res63, .res64, .res65, .res66, .res67, .res68, .res69
-  {
-    font-size: 1rem
-  }
+  h1, .keuze-titel, .keuze-string, .voorbeelden, .res, .grid1_res, .grid2_res, .grid3_res, .grid4_res, .grid5_res, .grid6_res, .grid7_res, .grid8_res, .grid9_res, .grid10_res, .grid11_res, .grid12_res, .grid13_res, .grid14_res, .grid15_res, .grid16_res, .grid17_res, .grid18_res, .grid19_res, .grid20_res, .res33, .res34 .res35, .res36, .res37, .res38, .res39, .res40, .res41, .res42, .res43, .res44, .res45, .res46, .res47, .res48, .res49, .res50, .res51, .res52, .res53, .res54, .res55, .res60, .res61, .res62, .res63, .res64, .res65, .res66, .res67, .res68, .res69
+  {font-size: 1rem}
 }
