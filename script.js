@@ -1,180 +1,170 @@
 let result = false;
+let result1 = false;
+let result2 = false;
+let result3 = false;
 
-function emojiOrNot(str) {
-  const emojiRegex = /[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F700}-\u{1F77F}\u{1F780}-\u{1F7FF}\u{1F800}-\u{1F8FF}\u{1F900}-\u{1F9FF}\u{1FA00}-\u{1FA6F}\u{1FA70}-\u{1FAFF}\u{1FB00}-\u{1FBFF}]/u;
-  result = emojiRegex.test(str);
+function containsMultiCodepointCharacter(str) {
+  const chars = Array.from(str);result = chars.some(char => char.length > 1);return result;
+}
+
+function containsMultiCodepointCharacter2(str1, str2) {
+  const chars1 = Array.from(str1);result1 = chars1.some(char => char.length > 1);
+  const chars2 = Array.from(str2);result2 = chars2.some(char => char.length > 1);
+  if (result1 || result2) {result = true} else {result = false}
+  return result;
+}
+
+function containsMultiCodepointCharacter3(str1, str2, str3) {
+  const chars1 = Array.from(str1); result1 =  chars1.some(char => char.length > 1);
+  const chars2 = Array.from(str2); result2 =  chars2.some(char => char.length > 1);
+  const chars3 = Array.from(str3); result3 =  chars3.some(char => char.length > 1);
+  if (result1 || result2 || result3) {result = true} else {result = false}
   return result;
 }
 
 function string_Length() {
   const str = document.getElementById('grid1_input_1').value;
-  emojiOrNot(str);
-  result ? grid1_res.innerText = 'Emojies zijn niet toegelaten...' : grid1_res.innerText = str.length;
+  containsMultiCodepointCharacter(str);
+  result ? grid1_res.innerText = 'Karakters met een breedte van meer dan 1 karakter (zoals emojies) zijn niet toegelaten. (complicaties met de lengte).' : grid1_res.innerText = str.length;
 }
 
 function string_charAt() {
   const str = document.getElementById('grid2_input_1').value;
   const charIndex = document.getElementById('grid2_input_2').value;
-  emojiOrNot(str);
-  result ? grid2_res.innerText = 'Emojies zijn niet toegelaten...' : grid2_res.innerText = str.charAt(Number(charIndex));
+  containsMultiCodepointCharacter(str);
+  result ? grid2_res.innerText = 'Karakters met een breedte van meer dan 1 karakter (zoals emojies) zijn niet toegelaten. (complicaties met de lengte).' : grid2_res.innerText = str.charAt(Number(charIndex));
 }
 
 function string_charCodeAt() {
   const str = document.getElementById('grid3_input_1').value;
   const charIndex = document.getElementById('grid3_input_2').value;
-  emojiOrNot(str);
-  result ? grid3_res.innerText = 'Emojies zijn niet toegelaten...' : grid3_res.innerText = str.charCodeAt(charIndex);
+  containsMultiCodepointCharacter(str);
+  result ? grid3_res.innerText = 'Karakters met een breedte van meer dan 1 karakter (zoals emojies) zijn niet toegelaten. (complicaties met de lengte).' : grid3_res.innerText = str.charCodeAt(charIndex);
 }
 
 function string_at() {
   const str = document.getElementById('grid4_input_1').value;
   const charIndex = document.getElementById('grid4_input_2').value;
-  emojiOrNot(str);
-  result ? grid4_res.innerText = 'Emojies zijn niet toegelaten...' : grid4_res.innerText = str.at(charIndex);
+  containsMultiCodepointCharacter(str);
+  result ? grid4_res.innerText = 'Karakters met een breedte van meer dan 1 karakter (zoals emojies) zijn niet toegelaten. (complicaties met de lengte).' : grid4_res.innerText = str.at(charIndex);
 }
 
 function string_array() {
   const str = document.getElementById('grid5_input_1').value;
   const charIndex = document.getElementById('grid5_input_2').value;
-  emojiOrNot(str);
-  result ? grid5_res.innerText = 'Emojies zijn niet toegelaten...' : grid5_res.innerText = str[charIndex];
+  containsMultiCodepointCharacter(str);
+  result ? grid5_res.innerText = 'Karakters met een breedte van meer dan 1 karakter (zoals emojies) zijn niet toegelaten. (complicaties met de lengte).' : grid5_res.innerText = str[charIndex];
 }
 
 function string_slice() {
   const str = document.getElementById('grid6_input_1').value;
   const startIndex = Number(document.getElementById('grid6_input_2').value);
   const eindIndex = Number(document.getElementById('grid6_input_3').value);
-  emojiOrNot(str);
-  result ? grid6_res.innerText = 'Emojies zijn niet toegelaten...' : grid6_res.innerText = str.slice(startIndex, eindIndex);
+  containsMultiCodepointCharacter(str);
+  result ? grid6_res.innerText = 'Karakters met een breedte van meer dan 1 karakter (zoals emojies) zijn niet toegelaten. (complicaties met de lengte).' : grid6_res.innerText = str.slice(startIndex, eindIndex);
 }
 
-function result35() {
-  const resultThirtyfive = document.getElementById('zelf7').value;
-  const startIndex = Number(document.getElementById('zelf7-2').value);
-  const eindIndex = Number(document.getElementById('zelf7-3').value);
-  res35.innerText = resultThirtyfive.substring(startIndex, eindIndex);
+function string_substring() {
+  const str = document.getElementById('grid7_input_1').value;
+  const startIndex = Number(document.getElementById('grid7_input_2').value);
+  const eindIndex = Number(document.getElementById('grid7_input_3').value);
+  containsMultiCodepointCharacter(str);
+  result ? grid7_res.innerText = 'Karakters met een breedte van meer dan 1 karakter (zoals emojies) zijn niet toegelaten. (complicaties met de lengte).' : grid7_res.innerText = str.substring(startIndex, eindIndex);
 }
 
-function result38() {
-  const resultThirtyeight = document.getElementById('zelf8').value;
-  const startIndex = Number(document.getElementById('zelf8-2').value);
-  const eindIndex = Number(document.getElementById('zelf8-3').value);
-  res38.innerText = resultThirtyeight.substr(startIndex, eindIndex);
+function string_substr() {
+  const str = document.getElementById('grid8_input_1').value;
+  const startIndex = Number(document.getElementById('grid8_input_2').value);
+  const eindIndex = Number(document.getElementById('grid8_input_3').value);
+  containsMultiCodepointCharacter(str);
+  result ? grid8_res.innerText = 'Karakters met een breedte van meer dan 1 karakter (zoals emojies) zijn niet toegelaten. (complicaties met de lengte).' : grid8_res.innerText = str.substr(startIndex, eindIndex);
 }
 
-function result40() {
-  const resultForty = document.getElementById('zelf9').value;
-  res40.innerText = resultForty.toUpperCase();
+function string_toUpperCase() {
+  const str = document.getElementById('grid9_input_1').value;
+  containsMultiCodepointCharacter(str);
+  result ? grid9_res.innerText = 'Karakters met een breedte van meer dan 1 karakter (zoals emojies) zijn niet toegelaten. (complicaties met de lengte).' : grid9_res.innerText = str.toUpperCase();
 }
 
-function result42() {
-  const resultFortytwo = document.getElementById('zelf10').value;
-  res42.innerText = resultFortytwo.toLowerCase();
+function string_toLowerCase() {
+  const str = document.getElementById('grid10_input_1').value;
+  containsMultiCodepointCharacter(str);
+  result ? grid10_res.innerText = 'Karakters met een breedte van meer dan 1 karakter (zoals emojies) zijn niet toegelaten. (complicaties met de lengte).' : grid10_res.innerText = str.toLowerCase();
 }
 
-function result45() {
-  const resultFortyfive = document.getElementById('zelf11').value;
-  const resultFortyfive_2 = document.getElementById('zelf11-2').value;
-  const resultFortyfive_3 = document.getElementById('zelf11-3').value;
-  const n1 = Number(resultFortyfive);
-  const n2 = Number(resultFortyfive_2);
-  const n3 = Number(resultFortyfive_3);
-  if ((n1 === 0) && (n2 === 0) && (n3 === 0)) {
-    res45.innerText = "empty string";
-    return;
-  }
-  res45.innerText = resultFortyfive.concat(resultFortyfive_2, resultFortyfive_3);
+function string_concat() {
+  const str1 = document.getElementById('grid11_input_1').value;
+  const str2 = document.getElementById('grid11_input_2').value;
+  const str3 = document.getElementById('grid11_input_3').value;
+  containsMultiCodepointCharacter3(str1, str2, str3);
+  result ? grid11_res.innerText = 'Karakters met een breedte van meer dan 1 karakter (zoals emojies) zijn niet toegelaten. (complicaties met de lengte).' : grid11_res.innerText = str1.concat(str2, str3);
 }
 
-function result47() {
-  const resultFortyseven = document.getElementById('zelf12').value;
-  let str = resultFortyseven.trim(); 
-  document.getElementById("res47").textContent = "***" + str + "***";
+function string_trim() {
+  const str = document.getElementById('grid12_input_1').value;
+  containsMultiCodepointCharacter(str);
+  result ? grid12_res.innerText = 'Karakters met een breedte van meer dan 1 karakter (zoals emojies) zijn niet toegelaten. (complicaties met de lengte).' : grid12_res.innerText = "***" + str.trim(str) + "***";
 }
 
-function result49() {
-  const resultFortynine = document.getElementById('zelf13').value;
-  let str = resultFortynine.trimStart(); 
-  document.getElementById("res49").textContent = "***" + str + "***";
+function trimStart() {
+  const str = document.getElementById('grid13_input_1').value;
+  containsMultiCodepointCharacter(str);
+  result ? grid13_res.innerText = 'Karakters met een breedte van meer dan 1 karakter (zoals emojies) zijn niet toegelaten. (complicaties met de lengte).' : grid13_res.innerText = "***" + str.trimStart() +"***";
 }
 
-function result51() {
-  const resultFiftyone = document.getElementById('zelf14').value;
-  let str = resultFiftyone.trimEnd(); 
-  document.getElementById("res51").textContent = "***" + str + "***";
+function trimEnd() {
+  const str = document.getElementById('grid14_input_1').value;
+  containsMultiCodepointCharacter(str);
+  result ? grid14_res.innerText = 'Karakters met een breedte van meer dan 1 karakter (zoals emojies) zijn niet toegelaten. (complicaties met de lengte).' : grid14_res.innerText = "***" + str.trimEnd() +"***";
 }
 
-function result55() {
-  const resultFiftyfive = document.getElementById('zelf15').value;
-  const k = document.getElementById('zelf15-2').value;
-  const n = document.getElementById('zelf15-3').value;
-  let str = resultFiftyfive.padStart(n, k); 
-  document.getElementById("res55").textContent = str;
+function padStart() {
+  const str1 = document.getElementById('grid15_input_1').value;
+  const str2 = document.getElementById('grid15_input_2').value;
+  const str3 = document.getElementById('grid15_input_3').value;
+  const n = Number(str3);
+  containsMultiCodepointCharacter2(str1, str2);
+  result ? grid15_res.innerText = 'Karakters met een breedte van meer dan 1 karakter (zoals emojies) zijn niet toegelaten. (complicaties met de lengte).' : grid15_res.innerText = str1.padStart(n, str2);
 }
 
-function result60() {
-  const resultSixty = document.getElementById('zelf16').value;
-  const k = document.getElementById('zelf16-2').value;
-  const n = document.getElementById('zelf16-3').value;
-  let str = resultSixty.padEnd(n, k); 
-  document.getElementById("res60").textContent = str;
+function padEnd() {
+  const str1 = document.getElementById('grid16_input_1').value;
+  const str2 = document.getElementById('grid16_input_2').value;
+  const str3 = document.getElementById('grid16_input_3').value;
+  const n = Number(str3);
+  containsMultiCodepointCharacter2(str1, str2);
+  result ? grid16_res.innerText = 'Karakters met een breedte van meer dan 1 karakter (zoals emojies) zijn niet toegelaten. (complicaties met de lengte).' : grid16_res.innerText = str1.padEnd(n, str2);
 }
 
-function result62() {
-  const resultSixty = document.getElementById('zelf17').value;
-  const k = document.getElementById('zelf17-2').value;
-  let str = resultSixty.repeat(k); 
-  document.getElementById("res62").textContent = str;
+function repeat() {
+  const str = document.getElementById('grid17_input_1').value;
+  const str2 = document.getElementById('grid17_input_2').value;
+  const n = Number(str2);
+  containsMultiCodepointCharacter(str);
+  result ? grid17_res.innerText = 'Karakters met een breedte van meer dan 1 karakter (zoals emojies) zijn niet toegelaten. (complicaties met de lengte).' : grid17_res.innerText = str.repeat(n);
 }
 
-function result65() {
-  const resultSixtyfive = document.getElementById('zelf18').value;
-  const zoekStr = document.getElementById('zelf18-2').value;
-  const vervangStr = document.getElementById('zelf18-3').value;
-  let str = resultSixtyfive.replace(zoekStr, vervangStr);
-  document.getElementById("res65").textContent = str;
+function replace() {
+  const str1 = document.getElementById('grid18_input_1').value;
+  const str2 = document.getElementById('grid18_input_2').value;
+  const str3 = document.getElementById('grid18_input_3').value;
+  containsMultiCodepointCharacter3(str1, str2, str3);
+  result ? grid18_res.innerText = 'Karakters met een breedte van meer dan 1 karakter (zoals emojies) zijn niet toegelaten. (complicaties met de lengte).' : grid18_res.innerText = str1.replace(str2, str3);  
 }
 
-function result68() {
-  const textStr = document.getElementById('zelf19').value;
-  let searchStr = document.getElementById('zelf19-2').value;
-  const replaceStr = document.getElementById('zelf19-3').value;
-  let str = textStr.replaceAll(searchStr, replaceStr);
-  /*
-  try {
-    // Try to create a RegExp object. If it fails, assume it's a plain string.
-    const regex = new RegExp(searchStr, 'g'); 
-    textStr = textStr.replaceAll(regex, replaceStr); // Use replaceAll() only when regex is valid
-  } catch (error) {
-    // If the user input is not a valid regex, treat it as a literal string
-    textStr = textStr.replace(searchStr, replaceStr); // Use replace() for literal string
-  }
-  */
-  document.getElementById("res68").textContent = str;
+function replaceAll() {
+  const str1 = document.getElementById('grid19_input_1').value;
+  const str2 = document.getElementById('grid19_input_2').value;
+  const str3 = document.getElementById('grid19_input_3').value;
+  containsMultiCodepointCharacter3(str1, str2, str3);
+  result ? grid19_res.innerText = 'Karakters met een breedte van meer dan 1 karakter (zoals emojies) zijn niet toegelaten. (complicaties met de lengte).' : grid19_res.innerText = str1.replaceAll(str2, str3);  
 }
 
-/*
-function result68() {
-  const textStr = document.getElementById('zelf19').value;
-  let searchStr = document.getElementById('zelf19-2').value;
-  const replaceStr = document.getElementById('zelf19-3').value;
-
-  try {
-    // Try to create a RegExp object. If it fails, assume it's a plain string.
-    const regex = new RegExp(searchStr, 'g'); 
-    textStr = textStr.replaceAll(regex, replaceStr); // Use replaceAll() only when regex is valid
-  } catch (error) {
-    // If the user input is not a valid regex, treat it as a literal string
-    textStr = textStr.replace(searchStr, replaceStr); // Use replace() for literal string
-  }
-  document.getElementById("res68").textContent = textStr;
-}
-*/
-
-function result71() {
-  const resultSeventyone = document.getElementById('zelf20').value;
-  const splitCharacter = document.getElementById('zelf20-2').value; 
-  const result = resultSeventyone.split(splitCharacter); 
-  const resultString = JSON.stringify(result);
-  document.getElementById("res71").textContent = resultString;
+function split() {
+  const str1 = document.getElementById('grid20_input_1').value;
+  const str2 = document.getElementById('grid20_input_2').value;
+  let str3 = str1.split(str2);
+  const resultString = JSON.stringify(str3);
+  containsMultiCodepointCharacter2(str1, str2);
+  result ? grid20_res.innerText = 'Karakters met een breedte van meer dan 1 karakter (zoals emojies) zijn niet toegelaten. (complicaties met de lengte).' : grid20_res.innerText = resultString;   
 }
